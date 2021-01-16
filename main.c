@@ -2,10 +2,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
-void add(int *array, int size);
-
-void big(int *array_1 , int size);
+#include "main.h"
 
 int main(void)
 {
