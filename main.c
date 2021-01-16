@@ -1,28 +1,50 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* the new version of big number from n numbers using arrays and procudural philosophy ( functions :) ) */
 
-int main()
+#include <stdlib.h>
+#include <stdio.h>
+
+void add(int *array, int size);
+
+void big(int *array_1 , int size);
+
+int main(void)
 {
-    int n, max, choice;
-    printf("how many you want \n");
+    int size;
+    printf("add array size :)\n");
     do
     {
-        printf("how many you want \n");
-        scanf("%d", &choice);
-    } while(choice < 0);
-    printf("enter first number\n");
-    scanf("%d", &max);
-    for(choice-- ; choice != 0 ; choice--)
-    {
-        scanf("%d", &n);
-        if(n > max)
-        {
-            max = n;
-        }
+        scanf("%d", &size);
 
-    }
+    } while(size < 0 || size > 12);
 
-    printf("the max is : %d", max);
+    int array[size];
+
+    add(array, size);
+
+    big(array, size);
 
     return 0;
+}
+void add(int *array, int size)
+{
+    printf("add the %d elements\n", size);
+    int i;
+
+    for(i = 0 ; i < size ; i++)
+    {
+        scanf("%d", &array[i]);
+    }
+}
+
+void big(int *array_1 , int size)
+{
+    int max = array_1[0], i;
+    for(i = 0 ; i < size ; i++)
+    {
+        if(array_1[i] > max)
+        {
+            max = array_1[i];
+        }
+    }
+    printf("the biggest element is : %d", max);
 }
